@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<h1>Fibonacci</h1>
+<p>How do get nth Fibonacci number?</p>
+<h2>Psudocode</h2>
+<ol>
+	<li>Make Array</li>
+	<li>Loop from bottom up and get current with -2 pointer, -1pointer</li>	
+</ol>
+<br><br>
+<b>DEBUG:</b>
+<pre>
+function fibonacci(n){
+  var fibo = [0, 1];
+  
+  if (n <= 2) return 1;
+
+  for (var i = 2; i <=n; i++ ){
+   fibo[i] = fibo[i-1]+fibo[i-2];
+  }
+
+ return fibo[n];
+} 
+
+//RECURSIVE
+function fibonacciR(n){
+  if(n<=1)
+    return n;
+  else
+    return fibonacciR(n-1) + fibonacciR (n-2);  
+}
+</pre>
+<p id='answer'></p>
+
+<script type="text/javascript">
+function fibonacci(n){
+  var fibo = [0, 1];
+  
+  if (n <= 2) return 1;
+
+  for (var i = 2; i <=n; i++ ){
+   fibo[i] = fibo[i-1]+fibo[i-2];
+  }
+
+ return fibo[n];
+} 
+
+	var p = document.createElement("p");
+	p.setAttribute('style', 'white-space: pre;');
+	p.textContent = "fibonacci(12): "+fibonacci(12)+"\r\n";
+	document.getElementById('answer').appendChild(p);
+
+/*=================RESTATE===============
+1 Refactor, Restate into a more intutive form
+2 Write WHY for code statement 
+*/
+function fibonacci(n){ //Series of numbers that start from 1 and sums the current and previous to form next value
+  var fibo = [0, 1];
+  
+  if (n <= 2) return 1;
+  //Takes previous values and gets current value get value other than 1 if 3
+  //bottom-up addition.
+  for (var i = 2; i <= n; i++ ){
+   fibo[i] = fibo[i-1]+fibo[i-2];
+   console.log(fibo[i]);
+  }
+
+ return fibo[n];
+} 
+
+function fibonacciR(n){
+  if(n<=1)
+    return n;
+  else
+    return fibonacciR(n-1) + fibonacciR (n-2);  
+}
+
+</script>
+</body>
+</html>

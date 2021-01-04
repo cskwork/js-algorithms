@@ -5,54 +5,80 @@
 </head>
 <body>
 
-<h1>check Prime</h1>
-<p>How would you verify a prime number?</p>
+<h1>Prime Factors</h1>
+<p>How could you find all prime factors of a number?</p>
+<p>prime factors: factors of numbers that are themselves prime #'s.
 <h2>Psudocode</h2>
 <ol>
-	<li>Prime # divisible by itself and one</li>
-	<li>Run while loop and increase one to divisor if not prime for that divisor</li>	
+	<li>Run while loop - start division by 2 and if not divisible increase</li>
+	<li>Store if divisible by 2</li>
 </ol>
-<p>Answer</p>
+<br><br>
+<b>DEBUG:</b>
+<pre>
+function primeFactors(n){
+  var divisor = 2;
+  
+  while(n>2){
+    if(n % divisor == 0){
+       factors.(divisor); 
+       n= ;
+    }
+    else{
+      divisor++;
+    }     
+  }
+  return;
+}
+</pre>
 <p id='answer'></p>
-
+<b>Run time complexity? can you make this better?</b>
+<pre>
+	O(n). you can increase divisor by 2 form divisor = 3. Because, if a number is divisible by any even number it would divisible by 2. Hence, you dont need to divide by even numbers. Besides, you will not have a factor bigger than half of its value. if you want make it complex use tough concept in no. 1 (try-2. if u get it)
+</pre>
 
 <script type="text/javascript">
-	function isPrime(n){
-		var divisor = 2;
+function primeFactors(n){
+  var factors = [], divisor = 2;
+  
+  while(n > 2){
+    if(n % divisor == 0){
+       factors.push(divisor); 
+       n= n / divisor;
+    }
+    else{
+      divisor++;
+    }     
+  }
+  return factors;
+}
 
-		while(n > divisor){
-			if(n % divisor == 0){
-				return false;
-			}else{
-				divisor++;
-			}
-			return true;
-		}
-	}
+var p = document.createElement("p");
 
-	var p = document.createElement("p");
-	p.setAttribute('style', 'white-space: pre;');
-	p.textContent = "isPrime(137): "+isPrime(137)+"\r\n";
-	p.textContent += "isPrime(237): "+isPrime(237);
-	document.getElementById('answer').appendChild(p);
+p.setAttribute('style', 'white-space: pre;');
+p.textContent = "primeFactors(69): "+primeFactors(69)+"\r\n";
+document.getElementById('answer').appendChild(p);
 
 /*=================RESTATE===============
 1 Refactor, Restate into a more intutive form
 2 Write WHY for code statement 
 */
-function isPrime2(numb){
-	//All divide by 1 so start with 1
-	var primeDivisor = 2;
-	while(numb > divisor){
-		//If divisible by a number other than 1 then not prime
-		if(n % divisor == 0){
-			return false;
-		}else{
-		//check until nth number
-			divisor++;
-		}
-		return true;
-	}
+function primeFactors(n){
+  //init list to store prime factors
+  var factors = [], 
+      divisor = 2;
+  
+  while(n>2){
+    if(n % divisor == 0){
+       factors.push(divisor); 
+       //Divide by divisor to get prime
+       n= n / divisor;
+    }
+    else{
+      divisor++;
+    }     
+  }
+  return factors;
 }
 
 

@@ -12,29 +12,42 @@
 	<li></li>
 	<li></li>	
 </ol>
-<p>Answer</p>
+<br><br>
+<b>DEBUG:</b>
+<pre>
+isPrime(n){
+	var divisor = ;
+
+	while( > divisor){
+		if(n  divisor == 0){
+			return ;
+		}else{
+			divisor;
+		}
+		return ;
+	}
+}
+</pre>
 <p id='answer'></p>
 
-
 <script type="text/javascript">
-	function isPrime(n){
-		var divisor = 2;
+function fibonacci(n){
+  var fibo = [0, 1];
+  
+  if (n <= 2) return 1;
 
-		while(n > divisor){
-			if(n % divisor == 0){
-				return false;
-			}else{
-				divisor++;
-			}
-			return true;
-		}
-	}
+  for (var i = 2; i <=n; i++ ){
+   fibo[i] = fibo[i-1]+fibo[i-2];
+  }
 
-	var p = document.createElement("p");
-	p.setAttribute('style', 'white-space: pre;');
-	p.textContent = "isPrime(137): "+isPrime(137)+"\r\n";
-	p.textContent += "isPrime(237): "+isPrime(237);
-	document.getElementById('answer').appendChild(p);
+ return fibo[n];
+} 
+
+var p = document.createElement("p");
+p.setAttribute('style', 'white-space: pre;');
+p.textContent = "isPrime(137): "+isPrime(137)+"\r\n";
+p.textContent += "isPrime(237): "+isPrime(237);
+document.getElementById('answer').appendChild(p);
 
 /*=================RESTATE===============
 1 Refactor, Restate into a more intutive form
