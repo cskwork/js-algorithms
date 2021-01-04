@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<h1>check Prime</h1>
+<p>How would you verify a prime number?</p>
+<h2>Psudocode</h2>
+<ol>
+	<li>Prime # divisible by itself and one</li>
+	<li>Run while loop and increase one to divisor if not prime for that divisor</li>	
+</ol>
+<p>Answer</p>
+<p id='answer'></p>
+
+
+<script type="text/javascript">
+	function isPrime(n){
+		var divisor = 2;
+
+		while(n > divisor){
+			if(n % divisor == 0){
+				return false;
+			}else{
+				divisor++;
+			}
+			return true;
+		}
+	}
+
+	var p = document.createElement("p");
+	p.setAttribute('style', 'white-space: pre;');
+	p.textContent = "isPrime(137): "+isPrime(137)+"\r\n";
+	p.textContent += "isPrime(237): "+isPrime(237);
+	document.getElementById('answer').appendChild(p);
+
+/*=================RESTATE===============
+1 Refactor, Restate into a more intutive form
+2 Write WHY for code statement 
+*/
+function isPrime2(numb){
+	//All divide by 1 so start with 1
+	var primeDivisor = 2;
+	while(numb > divisor){
+		//If divisible by a number other than 1 then not prime
+		if(n % divisor == 0){
+			return false;
+		}else{
+		//check until nth number
+			divisor++;
+		}
+		return true;
+	}
+}
+
+
+</script>
+</body>
+</html>
