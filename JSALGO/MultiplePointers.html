@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<h1>Multiple Pointers</h1>
+<p>Write a function called sumZero which accepts a sorted array of integers.
+
+The function should find the first pair where the sum is 0. Return an array
+
+that includes both values that sum to zero or undefined if a pair does not exist.</p>
+<h2>Psudocode</h2>
+<ol>
+	<li></li>
+	<li></li>	
+</ol>
+<br><br>
+<b>DEBUG:</b>
+<pre>
+isPrime(n){
+	var divisor = ;
+
+	while( > divisor){
+		if(n  divisor == 0){
+			return ;
+		}else{
+			divisor;
+		}
+		return ;
+	}
+}
+</pre>
+<p id='answer'></p>
+
+<script type="text/javascript">
+function fibonacci(n){
+  var fibo = [0, 1];
+  
+  if (n <= 2) return 1;
+
+  for (var i = 2; i <=n; i++ ){
+   fibo[i] = fibo[i-1]+fibo[i-2];
+  }
+
+ return fibo[n];
+} 
+
+var p = document.createElement("p");
+p.setAttribute('style', 'white-space: pre;');
+p.textContent = "isPrime(137): "+isPrime(137)+"\r\n";
+p.textContent += "isPrime(237): "+isPrime(237);
+document.getElementById('answer').appendChild(p);
+
+/*=================RESTATE===============
+1 Refactor, Restate into a more intutive form
+2 Write WHY for code statement 
+*/
+function isPrime2(numb){
+	//All divide by 1 so start with 1
+	var primeDivisor = 2;
+	while(numb > divisor){
+		//If divisible by a number other than 1 then not prime
+		if(n % divisor == 0){
+			return false;
+		}else{
+		//check until nth number
+			divisor++;
+		}
+		return true;
+	}
+}
+
+</script>
+</body>
+</html>
