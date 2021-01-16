@@ -2,9 +2,31 @@
 
 /*
 Write a function called same, that accepts two arrays.
-
-The function should return true if every value in the array has it's corresponding value squared in the second array. 
+The function should return true if every value in the array has it's 
+corresponding value squared in the second array. 
 The frequency of values must be the same.
+*/
+/*
+result
+	true || false
+input 
+	arr1, arr2
+function
+	if arr.length !== arr2.length
+		return false
+	freqCounter1, freqCounter2 = {};
+	for(let val of arr1)
+		freqCounter1[val] = freqCounter1[val] || 0)+1;
+	for(let val of arr2)
+		freqCounter2[val] = freqCounter2[val] || 0)+1;
+	for(let key in freqCounter1)
+		if(!(key**2 in freqCounter2)) //CORR VALUE SO can be arr1 vs arr2 || arr2 vs arr1
+			return false
+		if(freqCounter[key **2] !== freqCounter1[key])
+			return false
+	return true
+
+
 */
 function same(arr1, arr2){
 	if(arr1.length !== arr2.length){
@@ -22,7 +44,13 @@ function same(arr1, arr2){
 	}
 
 	for(let key in frequencyCounter1){
-		if(!(key ** 2 in frequencyCounter2)){
+		console.log('key in freqCounter1 ' + key);
+
+		for(let a in frequencyCounter2){
+			console.log('key2 in frequencyCounter2 ' +a);
+		}
+		//console.log('key ** 2 in frequencyCounter2 ' + frequencyCounter2[key]);
+		if(!(key ** 2 in frequencyCounter2)){ 
 			return false;
 		}
 		if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
